@@ -1,0 +1,15 @@
+name: perovskite-crystal-env
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.9
+  - numpy
+  - pandas
+  - matplotlib
+  - seaborn
+  - scikit-learn
+  - joblib
+  - pip
+  - pip:
+      - json
