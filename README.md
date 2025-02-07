@@ -1,6 +1,6 @@
 # **Perovskite-Crystal Project**  
 
-This project is part of a **research study** focused on predicting perovskite crystal **energy gaps (Eg)** using machine learning. It includes data processing, exploratory analysis, model selection, training, and large-scale predictions.  
+This project is part of a **research study** focused on predicting perovskite crystal **energy gaps (Eg)** using machine learning. The study leverages **Density Functional Theory (DFT) calculations** and **experimental results** to train and evaluate models. The workflow includes data processing, exploratory analysis, model selection, training, and large-scale predictions.  
 
 ---
 
@@ -11,10 +11,11 @@ This project is part of a **research study** focused on predicting perovskite cr
 - If using Conda, create and activate the environment with:  
   ```bash
   conda env create -f environment.yml
-  conda activate <env_name>
+  conda activate perovskite-crystal-env
   ```
 
 ### **2. Data**  
+- The dataset includes both **DFT-calculated energy gaps** and **experimentally measured values**.  
 - Download the **two Excel files** from Google Docs.  
 - Place them in the `data/` folder.
 
@@ -40,7 +41,7 @@ analysis/
 ## **Notebook Overview**  
 
 1️⃣ **Prepare Data** (`1.prepare_data.ipynb`)  
-   - Cleans and processes raw Excel files.  
+   - Cleans and processes raw Excel files (DFT & experimental data).  
    - Saves a prepared dataset in `data/`.  
 
 2️⃣ **Analyze Prepared Data** (`2.analyse_prepared_data.ipynb`)  
@@ -73,6 +74,8 @@ analysis/
 ---
 
 ## **Research Context**  
-This project is part of a **scientific research paper** aimed at understanding and predicting the energy gaps of perovskite crystals using **machine learning techniques**.  
+This project integrates **DFT results and experimental data** to improve the accuracy of perovskite crystal energy gap predictions. By combining theoretical calculations with empirical measurements, the models aim to generalize better across different material compositions.  
 
-For further details, please refer to the accompanying **research paper**.  
+This research contributes to the advancement of **perovskite-based materials** for applications in **solar cells, semiconductors, and optoelectronic devices**.  
+
+For further details, please refer to the **research paper**.  
