@@ -1,0 +1,2 @@
+Model: Gaussian Process Regression
+{"train mean error": 0.005563156201536467, "train median error": 0.0017330241860554346, "test mean error": 0.14125437112574343, "test median error": 0.025540128673186606}

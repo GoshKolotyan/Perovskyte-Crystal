@@ -1,0 +1,2 @@
+Model: full
+{"train mean error": 0.01942852743374883, "train median error": 0.01333571142386326, "test mean error": 0.025877971304491855, "test median error": 0.013855047850476112}

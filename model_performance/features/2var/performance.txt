@@ -1,0 +1,2 @@
+Model: 2var
+{"train mean error": 0.02501398902139028, "train median error": 0.02180103343404054, "test mean error": 0.023001886609909497, "test median error": 0.015234203218479375}

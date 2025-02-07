@@ -1,0 +1,2 @@
+Model: Decision Tree Regression
+{"train mean error": 0.023665690661530115, "train median error": 0.018678160919540214, "test mean error": 0.02588529229227438, "test median error": 0.025467730239303835}

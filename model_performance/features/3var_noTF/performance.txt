@@ -1,0 +1,2 @@
+Model: 3var_noTF
+{"train mean error": 0.019964395575437454, "train median error": 0.014179266655597555, "test mean error": 0.02436423796836776, "test median error": 0.013421694378447872}

@@ -1,0 +1,2 @@
+Model: Linear Regression
+{"train mean error": 0.021216720245688953, "train median error": 0.014189006301038793, "test mean error": 0.03132093985884859, "test median error": 0.024279809044765198}

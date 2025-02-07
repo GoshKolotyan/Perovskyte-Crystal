@@ -1,0 +1,2 @@
+Model: Gradient Boosting Regression
+{"train mean error": 0.004484685306058963, "train median error": 0.002830259910651267, "test mean error": 0.018361685144157508, "test median error": 0.015902559697619063}

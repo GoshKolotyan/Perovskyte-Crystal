@@ -1,0 +1,2 @@
+Model: Random Forest Regression1
+{"train mean error": 0.018030657606449264, "train median error": 0.011702302586442264, "test mean error": 0.02668106763772382, "test median error": 0.02422409795510596}

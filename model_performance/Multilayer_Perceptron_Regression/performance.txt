@@ -1,0 +1,2 @@
+Model: Multilayer Perceptron Regression
+{"train mean error": 0.1716972499532104, "train median error": 0.12719362300953813, "test mean error": 0.12152151531527892, "test median error": 0.07204496627904093}

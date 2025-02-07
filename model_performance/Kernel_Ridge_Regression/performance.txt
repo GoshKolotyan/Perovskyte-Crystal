@@ -1,0 +1,2 @@
+Model: Kernel Ridge Regression
+{"train mean error": 0.029296911537429277, "train median error": 0.01934858789811291, "test mean error": 0.0341167325425609, "test median error": 0.02896038521782566}

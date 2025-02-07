@@ -1,0 +1,2 @@
+Model: 3var
+{"train mean error": 0.019773453600632044, "train median error": 0.014081069760110088, "test mean error": 0.024805533942701775, "test median error": 0.012946063517652132}
