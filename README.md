@@ -1,81 +1,72 @@
-# **Perovskite-Crystal Project**  
+# Perovskite-Crystal: Predicting Energy Gaps Using Machine Learning and DFT
 
-This project is part of a **research study** focused on predicting perovskite crystal **energy gaps (Eg)** using machine learning. The study leverages **Density Functional Theory (DFT) calculations** and **experimental results** to train and evaluate models. The workflow includes data processing, exploratory analysis, model selection, training, and large-scale predictions.  
+This repository contains the code and workflow from our research paper  
+**“Accelerated composition optimization of hybrid perovskites via data-driven materials design, DFT calculations, and synthesis” (Materials & Design, 2025).**
 
----
-
-## **Setup Instructions**  
-
-### **1. Environment**  
-- Dependencies are provided in the `.yml` file.  
-- If using Conda, create and activate the environment with:  
-  ```bash
-  conda env create -f environment.yml
-  conda activate perovskite-crystal-env
-  ```
-
-### **2. Data**  
-- The dataset includes both **DFT-calculated energy gaps** and **experimentally measured values**.  
-- Download the **two Excel files** from Google Docs.  
-- Place them in the `data/` folder.
+[Published Paper (Elsevier)](https://doi.org/10.1016/j.matdes.2025.114902)
 
 ---
 
-## **Notebook Workflow**  
+## Project Highlights
+- Integrates **Density Functional Theory (DFT)** and **experimental datasets** for accurate bandgap (Eg) prediction.  
+- Implements **Random Forest** and **Bossting Alogorithms** for regression analysis.  
+- Achieves **R² > 0.9** correlation between predicted and calculated bandgaps.  
+- Enables **large-scale composition screening** to identify optimal perovskite candidates.  
 
-The **analysis** is organized into a structured workflow inside the `analysis/` directory:  
+---
 
-```
-analysis/
-├── 1.prepare_data.ipynb             # Cleans and preprocesses raw data  
-├── 2.analyse_prepared_data.ipynb    # Explores data distributions and dependencies  
-├── 3.model_selection.ipynb          # Tests multiple models and selects the best  
-├── 4.train.ipynb                    # Trains the selected model(s), computes feature importance  
-├── 5.prepare_data_predict.ipynb     # Prepares a parameter grid for large-scale predictions  
-├── 6.predict.ipynb                   # Applies trained models to predict Eg values  
-└── 7.analyse_predictions.ipynb      # Compares multiple models and selects the best region  
+## Setup Instructions
+
+### Environment
+```bash
+conda env create -f environment.yml
+conda activate perovskite-crystal-env
 ```
 
----
-
-## **Notebook Overview**  
-
-1️⃣ **Prepare Data** (`1.prepare_data.ipynb`)  
-   - Cleans and processes raw Excel files (DFT & experimental data).  
-   - Saves a prepared dataset in `data/`.  
-
-2️⃣ **Analyze Prepared Data** (`2.analyse_prepared_data.ipynb`)  
-   - Explores distributions of key parameters.  
-   - Examines dependencies of `rA` (`xA, yA, zA`), `rC` (`xC, yC, zC`), and `Eg` (`rA, rC, TF, OF`).  
-   - Includes comments with initial insights.  
-
-3️⃣ **Model Selection** (`3.model_selection.ipynb`)  
-   - Trains multiple machine learning models.  
-   - Selects top-performing models based on evaluation metrics.  
-
-4️⃣ **Train Model** (`4.train.ipynb`)  
-   - Trains a **Random Forest** or another selected model.  
-   - Performs **train-test split** (ensuring a specific row remains in the test set).  
-   - Computes **feature importance** via permutation importance.  
-   - Analyzes prediction errors. *(Final `Eg` dependency analysis will be completed after data correction.)*  
-
-5️⃣ **Prepare Data for Prediction** (`5.prepare_data_predict.ipynb`)  
-   - Generates a full **grid** of parameter values for large-scale predictions.  
-
-6️⃣ **Run Predictions** (`6.predict.ipynb`)  
-   - Uses trained models to **predict Eg** values for all grid points.  
-   - Saves predictions in the `predictions/` folder.  
-
-7️⃣ **Analyze Predictions** (`7.analyse_predictions.ipynb`)  
-   - Compares results from multiple models.  
-   - Selects the **best region** in the parameter space.  
-   - Outputs a summary file with optimal conditions.  
+### Data
+- Dataset includes both **DFT-calculated** and **experimentally measured** bandgaps.  
+- Place both Excel data files in the `data/` directory.  
+- If dataset is not public, contact the authors for access.  
 
 ---
 
-## **Research Context**  
-This project integrates **DFT results and experimental data** to improve the accuracy of perovskite crystal energy gap predictions. By combining theoretical calculations with empirical measurements, the models aim to generalize better across different material compositions.  
+## Workflow Overview
 
-This research contributes to the advancement of **perovskite-based materials** for applications in **solar cells, semiconductors, and optoelectronic devices**.  
+| Step | Notebook | Description |
+|------|-----------|-------------|
+| 1️⃣ | [1.prepare_data.ipynb](analysis/1.prepare_data.ipynb) | Clean and merge DFT + experimental datasets |
+| 2️⃣ | [2.analyse_prepared_data.ipynb](analysis/2.analyse_prepared_data.ipynb) | Explore distributions and feature correlations |
+| 3️⃣ | [3.model_selection.ipynb](analysis/3.model_selection.ipynb) | Train and evaluate multiple regression models |
+| 4️⃣ | [4.train.ipynb](analysis/4.train.ipynb) | Train final model, compute feature importances |
+| 5️⃣ | [5.prepare_data_predict.ipynb](analysis/5.prepare_data_predict.ipynb) | Generate parameter grid for large-scale predictions |
+| 6️⃣ | [6.predict.ipynb](analysis/6.predict.ipynb) | Apply trained model for Eg predictions |
+| 7️⃣ | [7.analyse_predictions.ipynb](analysis/7.analyse_predictions.ipynb) | Compare predictions and identify optimal compositions |
 
-For further details, please refer to the **research paper**.  
+---
+
+## Model and Features
+
+The models use **physically interpretable descriptors** derived from perovskite geometry and chemistry:  
+- **rA, rC:** ionic radii of A- and C-site atoms  
+- **TF:** Tolerance Factor  
+
+## Research Context
+
+This study integrates **data-driven machine learning** with **first-principles DFT calculations** to accelerate the discovery of new hybrid perovskites. By bridging experimental and theoretical data, the model provides a pathway toward efficient **composition optimization** for **solar cell and optoelectronic** applications.
+
+---
+
+## Citation
+
+If you use this repository or related datasets, please cite:
+
+> S. Grigoryan, N. Petrosyan, G. Kolotyan, A. Kozmanyan, V. Avetisyan, H. Zakaryan, M. J. Schöning, A. Asatryan, H. Khachatryan,  
+> *Accelerated composition optimization of hybrid perovskites via data-driven materials design, DFT calculations and synthesis*,  
+> **Materials & Design**, 2025. DOI: [10.1016/j.matdes.2025.114902](https://doi.org/10.1016/j.matdes.2025.114902)
+
+---
+
+## Contact
+
+For research collaborations or questions, please contact:  
+📧 **goshkolotyan@gmail.com**  
